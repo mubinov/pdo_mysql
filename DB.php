@@ -36,12 +36,13 @@ class DB {
             print $e->getMessage();
         }
     }
-
+        
     /**
      * Отключить PDO
      */
     public function __destruct() {
         $this->engine = null;
+        self::$instance = false;
     }
 
     /**
