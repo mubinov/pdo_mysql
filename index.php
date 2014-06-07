@@ -44,3 +44,10 @@ $res = $db ->query('SELECT * FROM `testtable` WHERE id<:id AND value=:value',
 				compact('id','value')); 
 
 print "count = {$res->rowCount()}\n";
+
+/*
+* PDO kill example
+*/
+
+$db = DB::getInstance();
+$db->__destruct();
